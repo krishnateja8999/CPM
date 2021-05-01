@@ -1,0 +1,77 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Add Stock Transfer Request
+  </h1>
+</div>
+<div mat-dialog-content>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Request Title : </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="text" class="form-control" placeholder="Enter Request Title" required>
+        </div>
+    </div>
+  
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Sending Project : </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+           <mat-select class="form-control" placeholder="Select" required>
+             <mat-option [value]="0">Demo Project</mat-option>
+             <mat-option [value]="1">Dobari Test Project</mat-option>
+             <mat-option [value]="2">Dudhichua Project</mat-option>
+             <mat-option [value]="4">Khadia</mat-option>
+             <mat-option [value]="5">Lakhanpur OCP</mat-option>
+             <mat-option [value]="6">Legal Project</mat-option>
+             <mat-option [value]="7">Sigrauli</mat-option>
+             <mat-option [value]="8">Stock Jharkhand</mat-option>
+           </mat-select>
+        </div>
+    </div>
+    <div class="form-group" >
+      <label class="control-label col-sm-4 add-member-label" >Category : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" >
+         <mat-select class="form-control" placeholder="Select" style="cursor:not-allowed" disabled readonly>
+         </mat-select>
+      </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4 add-member-label">Equipment Type : </label>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+       <mat-select class="form-control" placeholder="Select" style="cursor:not-allowed" disabled readonly>
+       </mat-select>
+    </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Equipment Make : </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+     <mat-select class="form-control" placeholder="Select" style="cursor:not-allowed" disabled readonly>
+
+     </mat-select>
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Equipment Model : </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+     <mat-select class="form-control" placeholder="Select" style="cursor:not-allowed" disabled readonly>
+     </mat-select>
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Receiving Store : </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+     <mat-select class="form-control" placeholder="Select">
+       <mat-option [value]="0">Dumper Store - Mercedes Benz</mat-option>
+       <mat-option [value]="1">Dumper Store - Volvo</mat-option>
+       <mat-option [value]="2">Dumper Store Primary</mat-option>
+       <mat-option [value]="4">Dumpers & Machinery</mat-option>
+       <mat-option [value]="5">Materials Store</mat-option>
+     </mat-select>
+  </div>
+  </div>
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button class="btn-primary"  [mat-dialog-close]="'test'"><mat-icon>send</mat-icon> <span
+             >Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>Close</button>
+</mat-dialog-actions>

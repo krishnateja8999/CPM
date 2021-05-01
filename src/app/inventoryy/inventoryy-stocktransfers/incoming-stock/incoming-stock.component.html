@@ -1,0 +1,78 @@
+<div class="col-sm-12">
+  <div class="pull-right col-sm-1 no-padding">
+
+      <!-- <button mat-raised-button color="primary" style="position: relative; left: 28px;" class="pull-right filter-hover" (click)="filterToggle = !filterToggle">
+          <mat-icon>filter_list</mat-icon> Filter
+      </button> -->
+  </div>
+</div>
+<div class="no-padding col-sm-12"> 
+  <form style="width: 1370px;margin-left: -14px;">
+      <div fxLayout="row"  *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100">
+              <mat-card class="filter">
+                  <mat-card-content>
+                      <div class="row col-sm-12">
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Project:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option' [value]="0">Legacy Project</mat-option>
+                                      <mat-option class='option' [value]="1">Singruali</mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+
+
+                          <div class="col-sm-4" style="text-align: right;">
+                              <div >
+                              <!-- <button mat-raised-button color="primary" class="add-hover btn-primary search" style="margin-right: 13px;">
+                                  <mat-icon>youtube_searched_for</mat-icon> Search
+                              </button> -->
+                              <button mat-raised-button class=" btn-primary" style="margin-right: 13px;">
+                                <mat-icon>youtube_searched_for</mat-icon> Search
+                              </button>
+                              <button mat-raised-button (click)="resetFilter()" style="margin-right: 19px;">
+                                  <mat-icon>settings_backup_restore</mat-icon> Reset
+                              </button>
+                              <a (click)="filterToggle = !filterToggle"
+                                style="font-size: 25px; cursor: pointer;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                              </a>
+                              
+                          </div>
+                          </div>
+                      </div>
+                  </mat-card-content>
+              </mat-card>
+          </div>
+      </div>
+  </form>
+
+  <app-project-dashboard></app-project-dashboard>
+<div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-xs-12">
+        <div class="pills">
+          <ul class="nav nav-pills" style="margin-top:-8px;">
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" routerLink="store-incharge">
+                Store In Charge (0)
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" routerLink="technical-engineer">
+                Technical Engineer (0)
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+

@@ -1,0 +1,134 @@
+<div class="col-sm-12" style="margin-top: -8px;margin-bottom: 6px;">
+  <div class="pull-right col-sm-1 no-padding">
+
+      <button mat-raised-button color="primary" style="position: relative; left: 28px;" class="pull-right filter-hover" (click)="filterToggle = !filterToggle">
+          <mat-icon>filter_list</mat-icon> Filter
+      </button>
+  </div>
+</div>
+<div class="no-padding col-sm-12"> 
+  <form style="width: 1370px;margin-left: -14px;">
+      <div fxLayout="row"  *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100">
+              <mat-card class="filter">
+                  <mat-card-content>
+                      <div class="row col-sm-12">
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Gate Pass Type:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option' [value]="0">Auto</mat-option>
+                                      <mat-option class='option' [value]="1">Manual</mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Category:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option' [value]="0">Consignment</mat-option>
+                                      <mat-option class='option' [value]="1">SRN</mat-option>
+                                      <mat-option class='option' [value]="2">Material Issue</mat-option>
+                                      <mat-option class='option' [value]="3">Manual Loans</mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Direction:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedTasks [value]="0">In</mat-option>
+                                      <mat-option #allSelectedTasks [value]="1">Out</mat-option>
+                                     
+                                  </mat-select>
+                              </div>
+                          </div>
+                      
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">From Date:</div>
+                              <div class="col-sm-9 no-padding">
+                                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                              <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                              </div>
+                          </div>
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">To Date:</div>
+                              <div class="col-sm-9 no-padding">
+                                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                              <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                              </div>
+                          </div>
+                          <div class="col-sm-4" style="text-align: right;">
+                              <div >
+                              <!-- <button mat-raised-button color="primary" class="add-hover btn-primary search" style="margin-right: 13px;">
+                                  <mat-icon>youtube_searched_for</mat-icon> Search
+                              </button> -->
+                              <button mat-raised-button class=" btn-primary" style="margin-right: 13px;">
+                                <mat-icon>youtube_searched_for</mat-icon> Search
+                              </button>
+                              <button mat-raised-button (click)="resetFilter()" style="margin-right: 19px;">
+                                  <mat-icon>settings_backup_restore</mat-icon> Reset
+                              </button>
+                              <a (click)="filterToggle = !filterToggle"
+                                style="font-size: 25px; cursor: pointer;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                              </a>
+                              
+                          </div>
+                          </div>
+                      </div>
+                  </mat-card-content>
+              </mat-card>
+          </div>
+      </div>
+  </form>
+
+
+<div class="row" style="margin-top: 7px;">
+  <div class="col-xs-12">
+    <div id="grid-table-container" class="table-responsive">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr>
+            <th class="text-center">Vendor Name & Branch</th>
+            <th class="text-center">Gen. Type</th>
+            <th class="text-center">Category</th>
+            <th class="text-center">Con. Ref#</th>
+            <th class="text-center">Type</th>
+            <th class="text-center">Purpose</th>
+            <th class="text-center">Direction</th>
+            <th class="text-center">Gate Pass#</th>
+            <th class="text-center">Issue Date</th> 
+            <th class="text-center">Closure Date</th>
+            <th class="text-center">Details</th>
+            <th class="text-center">Activity Log</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td style="text-align: left!important;">{{item.name}}</td>
+            <td style="text-align: center!important;">{{item.genType }}</td>
+            <td style="text-align: center!important;">{{item.category}}</td>
+            <td style="text-align: left!important;">{{item.conRef }}</td>
+            <td style="text-align: center!important;">{{item.type }}</td>
+            <td style="text-align: center!important;">{{item.purpose }}</td>  
+            <td style="text-align: center!important;">{{item.direction }}</td>
+            <td style="text-align: left!important;">{{item.gatPass }}</td>
+            <td style="text-align: center!important;">{{item.issueDate }}</td> 
+            <td style="text-align: center!important;">{{item.closureDate }}</td>
+            <td style="text-align: center!important;">{{item.details }}</td>
+            <td style="text-align: center!important;">{{item.activityLog }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <mat-paginator [pageSizeOptions]="[9, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      <!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)"
+  showFirstLastButtons></mat-paginator> -->
+    </div>
+  </div>
+</div>
+</div>

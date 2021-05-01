@@ -1,0 +1,65 @@
+<div class="row-wrap">
+  <div class="flex-p w-100">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row" style="margin-bottom:7px;">
+                  <div class="col-xs-4 ">
+                      <div class="flex-p">
+                      </div>
+                  </div>
+                  <!-- Buttons -->
+                  <div class="col-xs-8 " style="margin-left:-10px;margin-top: -18px;">
+                      <div class="flex-p">
+                          <button mat-raised-button class="pull-right  btn-primary" (click)="openUploadExcell()">
+                             Upload Excel
+                          </button>
+                      
+                  </div>
+                      
+                  </div>
+              </div>
+              
+
+<!-- Table -->
+<div class="row" style="margin-top:20px;">
+  <div class="col-xs-12" style="margin-left:8px">
+      <div id="grid-table-container" class="table-responsive" style="width: 99%;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th class="text-center">Stocking Date</th>
+                      <th class="text-center">Total Items</th>
+                      <th class="text-center">Imported Items</th>
+                      <th class="text-center">Exceptions</th>
+                      <th class="text-center">Remarks</th>
+                      <th class="text-center">Imported By</th>
+                      <th class="text-center">Uploaded Date</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of item">
+                      
+                  <td class="text-center">{{item.stockingDate}}</td>
+                  <td class="text-center">{{item.totalItems}}</td>
+                  <td class="text-center">{{item.importedItems}} </td>
+                  <td class="text-center">{{item.exceptions}}</td>
+                  <td class="text-left ">{{item.remarks}}</td>
+                  <td class="text-center">{{item.importedBy}}</td>
+                  <td class="text-center">{{item.uploadedDate}} </td>
+                  
+  </tr>
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+

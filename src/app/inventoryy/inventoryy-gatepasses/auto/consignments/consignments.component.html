@@ -1,0 +1,50 @@
+  <div class="row" style="margin-right: 5px; margin-left: 2px;margin-top: 15px;">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th>Vendor(Branch)</th>
+                <th>Gate Pass#</th>
+                <th>Con. Ref.#</th>
+                <th>Inv. No.</th>
+                <th>Transporter Details</th>
+                <th>Issue Date</th>
+                <th>Actions</th>
+                <th>Close GP</th>
+                <th>Activity</th> 
+                <th>Log	Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td>{{item.vendor}}</td>
+                <td>{{item.gatePass }}</td>
+                <td>{{item.conRef}}</td>
+                <td class="text-center">{{item.invNo}}</td>
+                <td>{{item.transporterDetails}}</td>
+                <td class="text-center">{{item.issueDate }}</td>  
+                <td class="text-center">{{item.actions }}
+                  <a style="cursor: pointer;margin-right:0px; " matTooltip="Click to Print GatePass">
+                    <mat-icon style="cursor: pointer;color: #5e40cef7;font-size: 20px;vertical-align: middle;">print
+                    </mat-icon>
+                  </a>
+                  <a class="anchor" matTooltip="Not Yet Issused the GatePass" style=" margin-left:0px">
+                    <mat-icon style="cursor: pointer;color: #000000f7;font-size: 20px;vertical-align: middle;">cancel
+                    </mat-icon>
+                  </a> 
+                </td>
+                <td>{{item.closeGP }}</td>
+                <td>{{item.activity }}</td> 
+                <td>{{item.logStatus }}</td>
+              </tr>
+    
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[9, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          <!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)"
+      showFirstLastButtons></mat-paginator> -->
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,41 @@
+
+
+<div class="table-responsive w-100 flex-p">
+  <table id="example2" class="table table-bordered table-hover">
+      <thead class="tbl-head">
+          <tr class="tr-grid-header">
+              <th class="vert-align-mid" style="width: 187px !important;">Requisition No.</th>
+              <th class="vert-align-mid" style="width:90px">Requisition Date</th>
+              <th class="vert-align-mid" style="width:263px">Requisition Title</th>
+              <th class="vert-align-mid" style="width:155px">Requisition Category & Sub Category</th>
+              <th class="vert-align-mid" style="width:118px">Make / Model & Door No.</th>
+              <th class="vert-align-mid" style="width:103px">Project</th>
+              <th class="vert-align-mid" style="width:70px">View Items</th>
+              <th class="vert-align-mid" style="width:89px">High Value Approval</th>
+              <th>Approval</th>
+              <th>Required By</th>
+              <th>Review</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of items">
+              <td>{{item.reqNo}}</td>
+              <td>{{item.reqDate}}</td>
+              <td>{{item.reqTitle}}</td>
+              <td>{{item.reqCategory}}</td>
+              <td>{{item.make}}</td>
+              <td>{{item.project}}</td>
+              <td  style="text-align: center!important;">{{item.viewItems}}</td>
+              <td  style="text-align: center!important;">{{item.highApprovals}}</td>
+              <td  style="text-align: center!important;">{{item.approvals}}</td>
+              <td>{{item.reqBy}}</td>
+              <td>{{item.review}}</td>
+              
+          </tr>
+          
+          
+      </tbody>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+</div>

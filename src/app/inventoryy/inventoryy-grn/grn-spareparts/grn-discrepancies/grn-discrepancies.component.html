@@ -1,0 +1,337 @@
+<!-- 
+
+<div class="row-wrap">
+  <div class="flex-p w-100">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="flex-p">
+              <app-kbpl-projects></app-kbpl-projects>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="flex-p">
+
+              <button
+                mat-raised-button
+                color="primary"
+                class="pull-right filters-hover margin-right-10"
+                (click)="filterToggle = !filterToggle">
+                <mat-icon>filter_list</mat-icon> Filter
+              </button> 
+            </div>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+            <mat-card class="filter">
+              <mat-card-content>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      Vendor:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">Dinesh Construction</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      Branch:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">All</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      PO#:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">All</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="row" style="padding-top:10px !important">
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      Invoice#:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">All</mat-option>
+                      </mat-select>                      
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      GRN#:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">All</mat-option>
+                      </mat-select>                      
+                    </div>
+                  </div>
+        
+                </div>
+                <div class="row" style="margin-top:-28px !important">
+        
+                  <div class="col-lg-1" style="margin-left:80% !important;">
+                    <button mat-raised-button class="pull-right btn-primary">
+                      <mat-icon>youtube_searched_for</mat-icon> Search
+                    </button>
+        
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                    <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                      <mat-icon>settings_backup_restore</mat-icon> Clear
+                    </button>
+        
+                  </div>
+                  <a (click)="filterToggle = !filterToggle" class="pull-right"
+                    style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                  </a>
+        
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: -45px">
+          <div class="col-xs-12" style="margin-left: 10px">
+            <app-schedule-tabs></app-schedule-tabs>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row-wrap">
+  <div class="flex-p w-100">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row" style="margin-bottom:7px;">
+                  <div class="col-xs-4 ">
+                      <div class="flex-p">
+                      </div>
+                  </div>
+                  <div class="col-xs-8 " style="margin-left:-10px">
+                      <div class="flex-p">
+                      
+                  </div>
+                      
+                  </div>
+              </div>
+              
+
+<div class="row" style="margin-top:18px;">
+  <div class="col-xs-12" style="margin-left:8px">
+      <div id="grid-table-container" class="table-responsive" style="width: 99%;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th class="text-center">Sl. No.</th>
+                      <th class="text-center">Project</th>
+                      <th class="text-center">STO No</th>
+                      <th class="text-center">Date</th>
+                      <th class="text-center">Stock Transfer Type</th>
+                      <th class="text-center">Invoice /DC #</th>
+                      <th class="text-center">Invoice /DC Date</th>
+                      <th class="text-center">SRN No</th>
+                      <th class="text-center">Delivery Date</th>
+                      <th class="text-center">Discrepancy</th>
+                      <th class="text-center">Present STO</th>
+                      <th class="text-center">Status</th>
+                      <th class="text-center">Activity Log</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let items of items">
+                      <td>{{items.slNo}}</td>
+                      <td>{{items.project}}</td>
+                      <td>{{items.stoNo}}</td>
+                      <td>{{items.date}}</td>
+                      <td>{{items.stocktr}}</td>
+                      <td>{{items.invoiceNo}}</td>
+                      <td>{{items.invoiceDate}}</td>
+                      <td>{{items.srnNo}}</td>
+                      <td>{{items.deliveryDate}}</td>
+                      <td>{{items.discrepancy}}</td>
+                      <td>{{items.present}}</td>
+                      <td>{{items.status}}</td>
+                      <td>{{items.activityLog}}</td>
+                  </tr>  
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+ -->
+ <div class="row" style="margin-bottom:10px; margin-right: -3px;">
+  <div class="col-xs-5 ">
+  </div>
+  <div class="col-xs-7" style="margin-top: -50px;margin-bottom:5px">
+    <div class="flex-p">
+      <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+        (click)="filterToggle = !filterToggle">
+        <mat-icon>filter_list</mat-icon> Filter
+      </button>
+
+    </div>
+
+  </div>
+</div>
+<!-- Filter toggle -->
+<div fxLayout="row wrap" *ngIf="filterToggle">
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+    <mat-card class="filter">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass">
+              Vendor:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" multiple placeholder="All">
+                <mat-option [value]="0">Dinesh Construction</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass">
+              Branch:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" multiple placeholder="All">
+                <mat-option [value]="0">All</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass">
+              PO#:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" multiple placeholder="All">
+                <mat-option [value]="0">All</mat-option>
+              </mat-select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="padding-top:10px !important">
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass">
+              Invoice#:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" multiple placeholder="All">
+                <mat-option [value]="0">All</mat-option>
+              </mat-select>                      
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass">
+              GRN#:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" multiple placeholder="All">
+                <mat-option [value]="0">All</mat-option>
+              </mat-select>                      
+            </div>
+          </div>
+
+        </div>
+        <div class="row" style="margin-top:-28px !important">
+
+          <div class="col-lg-1" style="margin-left:80% !important;">
+            <button mat-raised-button class="pull-right btn-primary">
+              <mat-icon>youtube_searched_for</mat-icon> Search
+            </button>
+
+          </div>
+          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+            <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+              <mat-icon>settings_backup_restore</mat-icon> Clear
+            </button>
+
+          </div>
+          <a (click)="filterToggle = !filterToggle" class="pull-right"
+            style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+          </a>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="row" style="margin-right: 5px; margin-left: 2px;">
+  <div class="col-xs-12">
+    <div id="grid-table-container" class="table-responsive">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr>
+            <th class="text-center">Sl. No.</th>
+            <th class="text-center">Project</th>
+            <th class="text-center">STO No</th>
+            <th class="text-center">Date</th>
+            <th class="text-center">Stock Transfer Type</th>
+            <th class="text-center">Invoice /DC #</th>
+            <th class="text-center">Invoice /DC Date</th>
+            <th class="text-center">SRN No</th>
+            <th class="text-center">Delivery Date</th>
+            <th class="text-center">Discrepancy</th>
+            <th class="text-center">Present STO</th>
+            <th class="text-center">Status</th>
+            <th class="text-center">Activity Log</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let items of items">
+            <td>{{items.slNo}}</td>
+            <td>{{items.project}}</td>
+            <td>{{items.stoNo}}</td>
+            <td>{{items.date}}</td>
+            <td>{{items.stocktr}}</td>
+            <td>{{items.invoiceNo}}</td>
+            <td>{{items.invoiceDate}}</td>
+            <td>{{items.srnNo}}</td>
+            <td>{{items.deliveryDate}}</td>
+            <td>{{items.discrepancy}}</td>
+            <td>{{items.present}}</td>
+            <td>{{items.status}}</td>
+            <td>{{items.activityLog}}</td>
+        </tr>  
+        </tbody>
+      </table>
+      <mat-paginator [pageSizeOptions]="[9, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

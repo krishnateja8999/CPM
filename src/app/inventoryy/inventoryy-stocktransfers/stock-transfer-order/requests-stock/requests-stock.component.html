@@ -1,0 +1,76 @@
+<div class="row-wrap">
+  <div class="flex-p w-100">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row">
+                  <div class="col-xs-4 ">
+                      <div class="flex-p">
+                      </div>
+                  </div>
+                  <!-- Buttons -->
+                  <div class="col-xs-8 " style="margin-top:-54px">
+                      <div class="flex-p">
+                          <button mat-raised-button class="pull-right  btn-primary" (click)="openstocktransfer()">
+                             Create Stock Transfer Request
+                          </button>
+                      
+                  </div>
+                      
+                  </div>
+              </div>
+              
+
+<!-- Table -->
+<div class="row" style="margin-top:15px;">
+  <div class="col-xs-12" style="margin-left:8px;margin-top:-21px;">
+      <div id="grid-table-container" class="table-responsive" style="width: 99%;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th class="text-center">SI No.</th>
+                      <th class="text-center">Stock Transfer No.</th>
+                      <th class="text-center">Date</th>
+                      <th class="text-center">Request Title</th>
+                      <th class="text-center">Project</th>
+                      <th class="text-center">Category</th>
+                      <th class="text-center">Requested Items</th>
+                      <th class="text-center">Approved Items</th>
+                      <th class="text-center">Status</th>
+                      <th class="text-center">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of values">
+                      
+                  <td class="text-center">{{item.sino}}</td>
+                  <td class="text-center">{{item.stocktransferno}}</td>
+                  <td class="text-center">{{item.date}} </td>
+                  <td class="text-center" style="width: 196px;">{{item.reqtitle}}</td>
+                  <td class="text-center">{{item.project}}</td>
+                  <td class="text-center">{{item.category}}</td>
+                  <td class="text-center">{{item.requestedItems}} </td>
+                  <td class="text-center">{{item.approvedItems}} </td>
+                  <td class="text-center">{{item.status}}</td>
+                  <td  class="text-center editDel">
+                     <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Project">
+                        <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                      </a>
+                      <a>
+                        <i class="fa fa-trash red" matTooltip="Delete Project"  style="cursor: pointer;"></i>
+                      </a>
+                  </td> 
+  </tr>
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+

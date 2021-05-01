@@ -1,0 +1,81 @@
+<div class="row-wrap">
+  <div class="flex-p w-100">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row" style="margin-bottom:-3px;">
+                  <div class="col-xs-4 ">
+                      <div class="flex-p">
+                      </div>
+                  </div>
+                  <!-- Buttons -->
+                  <div class="col-xs-8 " style="margin-left:-10px;margin-top: -55px;">
+                      <div class="flex-p">
+                          <button mat-raised-button class="pull-right  btn-primary" (click)="openjobcard()">
+                             Create Job Card Material Issue
+                          </button>
+                      
+                  </div>
+                      
+                  </div>
+              </div>
+              
+
+<!-- Table -->
+<div class="row">
+  <div class="col-xs-12" style="margin-left:8px">
+      <div id="grid-table-container" class="table-responsive" style="width: 99%;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th class="text-center">SI No.</th>
+                      <th class="text-center">Job Card#</th>
+                      <th class="text-center">Job Card Date</th>
+                      <th class="text-center">Maintenance Type</th>
+                      <th class="text-center">Equipment Type</th>
+                      <th class="text-center">Equipment Modal</th>
+                      <th class="text-center">Door No.</th>
+                      <th class="text-center">HMR</th>
+                      <th class="text-center">KMR</th>
+                      <th class="text-center">Material Issue</th>
+                      <th class="text-center">Status</th>
+                      <th class="text-center">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of item">
+                      
+                  <td class="text-center">{{item.sino}}</td>
+                  <td class="text-center">{{item.jobCard}}</td>
+                  <td class="text-center">{{item.jobCardDate}} </td>
+                  <td class="text-center">{{item.maintenanceType}}</td>
+                  <td class="text-center">{{item.equipmentType}}</td>
+                  <td class="text-center">{{item.equipmentModal}}</td>
+                  <td class="text-center">{{item.doorNo}} </td>
+                  <td class="text-center">{{item.hmr}} </td>
+                  <td class="text-center">{{item.kmr}} </td>
+                  <td class="text-center">{{item.materialIssue}} </td>
+                  <td class="text-center">{{item.status}}</td>
+                  <td  class="text-center editDel">
+                     <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Project">
+                        <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                      </a>
+                      <a>
+                        <i class="fa fa-trash red" matTooltip="Delete Project"  style="cursor: pointer;"></i>
+                      </a>
+                  </td> 
+  </tr>
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+

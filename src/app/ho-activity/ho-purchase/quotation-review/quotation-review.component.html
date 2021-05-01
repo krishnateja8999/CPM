@@ -1,0 +1,55 @@
+<div class="row-wrap">
+  <div class="flex-p w-100">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row" style="margin-bottom:7px;">
+                  <div class="col-xs-4 ">
+                      <div class="flex-p">
+                      </div>
+                  </div>
+              </div>
+              
+
+<!-- Table -->
+<div class="row" style="margin-top:20px;">
+  <div class="col-xs-12" style="margin-left:8px">
+      <div id="grid-table-container" class="table-responsive" style="width: 99%;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th>Requisition No</th>
+                      <th>Requisition Date</th>
+                      <th>Requisition Title</th>
+                      <th>Type</th>
+                      <th class="text-center">View Items</th>
+                      <th>Approvals</th>
+                      <th class="text-center">Required By</th>
+                      <th class="text-center">Review</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of values">
+                      <td>{{item.requisitionno}}</td>
+                      <td>{{item.requisitionDate}}</td>
+                      <td>{{item.requisitionTitle}}</td>
+                      <td>{{item.type}}</td>
+                      <td class="text-center">{{item.items}}</td>
+                      <td>{{item.approvals}}</td>
+                      <td class="text-center">{{item.requiredBy}}</td>
+                      <td class="text-center">{{item.review}}</td>
+  </tr>
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+

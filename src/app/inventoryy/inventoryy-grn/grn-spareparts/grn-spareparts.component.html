@@ -1,0 +1,154 @@
+<div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-xs-6" >
+        <div class="pills">
+          <ul class="nav nav-pills" style="margin-top:-8px;margin-bottom:15px">
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" routerLink="grn-active">
+                Active (10)
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" routerLink="grn-discrepancies">
+                Discrepancies (1)
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" routerLink="grn-archives">
+               Archives
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<div class="row-wrap">
+  <div class="flex-p w-100">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="flex-p">
+              <app-kbpl-projects></app-kbpl-projects>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="flex-p">
+
+              <!-- <button
+                mat-raised-button
+                color="primary"
+                class="pull-right filters-hover margin-right-10"  style="margin-top: -55px !important"
+                (click)="filterToggle = !filterToggle">
+                <mat-icon>filter_list</mat-icon> Filter
+              </button>  -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter -->
+        <!-- <div fxLayout="row wrap" *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+            <mat-card class="filter">
+              <mat-card-content>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      Vendor:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">All</mat-option>
+                        <mat-option [value]="1">Dinesh Constructions</mat-option>
+                        <mat-option [value]="2">Menon Bearings Ltd</mat-option>
+                        <mat-option [value]="3">Minda Industries Ltd</mat-option>
+                        <mat-option [value]="4">Rane Holdings Ltd</mat-option>
+                        <mat-option [value]="5">Usha International Ltd</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      Branch:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">All</mat-option>
+                        <mat-option [value]="1">Branch-1-IGST</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      GRN Status:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">All</mat-option>
+                        <mat-option [value]="1">Consignment In-Transit</mat-option>
+                        <mat-option [value]="2">GRN Delayed</mat-option>
+                        <mat-option [value]="3">GRN Pending</mat-option>
+                        <mat-option [value]="4">Consignment Revision</mat-option>
+                        <mat-option [value]="5">Consignment Submitted</mat-option>
+                        <mat-option [value]="6">Consignment Reverted</mat-option>
+                        <mat-option [value]="7">Consignment Revised</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="row" style="padding-top:10px !important">
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      PO Ref. No:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" multiple placeholder="All">
+                        <mat-option [value]="0">All</mat-option>
+                      </mat-select>                      
+                    </div>
+                  </div>
+                  
+                </div> 
+                <div class="row" style="margin-top:-28px !important">
+        
+                  <div class="col-lg-1" style="margin-left:80% !important;">
+                    <button mat-raised-button class="pull-right btn-primary">
+                      <mat-icon>youtube_searched_for</mat-icon> Search
+                    </button>
+        
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                    <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                      <mat-icon>settings_backup_restore</mat-icon> Clear
+                    </button>
+        
+                  </div>
+                  <a (click)="filterToggle = !filterToggle" class="pull-right"
+                    style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                  </a>
+        
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div> -->
+
+        <div class="row" style="margin-top: -45px">
+          <div class="col-xs-12" style="margin-left: 10px">
+            <app-schedule-tabs></app-schedule-tabs>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

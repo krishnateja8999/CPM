@@ -1,0 +1,62 @@
+<h1 mat-dialog-title class="custom-header" style="font-weight: 300; margin-bottom: 10px !important;background-color:#286ba5 !important">Update Due Date
+  <mat-icon class="pull-right" style="color: white; cursor: pointer;"
+      >
+      cancel</mat-icon>
+</h1>
+<form>
+  <div mat-dialog-content>
+
+      <div class="col-sm-8">
+          <label class="col-sm-12 add-member-label">Select due date urgency: </label>
+          <div class="col-sm-12">
+              <mat-radio-group>
+                  <mat-radio-button [value]="0"><span style="font-weight:400" checked>Fixed Date - Action must be completed ON this specific date</span></mat-radio-button>
+                  <mat-radio-button [value]="1"><span style="font-weight:400">Flex Date - Action must be completed on OR before this specific date</span></mat-radio-button>
+                  <mat-radio-button [value]="2"><span style="font-weight:400">To be scheduled later</span></mat-radio-button>
+              </mat-radio-group>
+              <!-- <mat-error class="col-sm-12 no-padding">Please select reason</mat-error> -->
+          </div>
+      </div>
+      <div class="col-sm-4">
+          <label class="col-sm-12">Due Date: </label>
+          <div class="col-sm-12">
+            <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1"  style="margin-left: 0px;">
+            <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+              <!-- <mat-error>Please select due date</mat-error> -->
+          </div>
+      </div>
+      <div class="col-sm-8">
+        <label class="col-sm-12 add-member-label">Do you have a preferred Team Member to complete this action?
+        </label>
+        <div class="col-sm-12">
+            <mat-radio-group>
+                <mat-radio-button [value]="true"><span style="font-weight:400">Yes</span>
+                </mat-radio-button>
+                <mat-radio-button [value]="false" style="margin-left:10px"><span style="font-weight:400" checked>No</span>
+                </mat-radio-button>
+            </mat-radio-group>
+            <!-- <mat-error class="col-sm-12 no-padding">Please select an option</mat-error> -->
+        </div>
+    </div>
+    <div class="col-sm-8">
+      <label class="col-sm-12 add-member-label">Is this a remedial action request: </label>
+      <div class="col-sm-12">
+          <mat-radio-group>
+              <mat-radio-button [value]="true"><span style="font-weight:400">Yes</span></mat-radio-button>
+              <mat-radio-button [value]="false" style="margin-left:10px"><span style="font-weight:400" checked>No</span>
+              </mat-radio-button>
+          </mat-radio-group>
+          <!-- <mat-error class="col-sm-12 no-padding">Please select an option</mat-error> -->
+      </div>
+  </div>
+
+  </div> 
+  <mat-dialog-actions align="center">
+    <button mat-raised-button class="add-hover btn-primary" type="submit">
+        <mat-icon>send</mat-icon>&nbsp;Save
+    </button>
+    <button mat-raised-button type="button" class="add-dark-hover btn-default">
+        <mat-icon>cancel</mat-icon>&nbsp;Cancel
+    </button>
+</mat-dialog-actions>
+</form>

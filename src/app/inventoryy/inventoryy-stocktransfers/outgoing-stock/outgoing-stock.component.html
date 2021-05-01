@@ -1,0 +1,85 @@
+<div class="col-sm-12 no-padding margin-top-10">
+  <p-accordion class="customAccordians">
+
+      <p-accordionTab class="expenses-new-p">
+          <p-header class="col-sm-11 pull-right" style="padding-left: 22px;">
+            Project Name : Singrauli <p style="margin-top:-15px;margin-left:400px">No. of Stock Tranfers : 1</p>
+            <p style="margin-top:-27px;margin-left:900px">No. of Items : 2</p>
+          </p-header>
+          
+          <table class="table table-bordered table-striped table-hover" style="margin-bottom:15px !important;">
+              <thead>
+                  <tr class="thead-color">
+                      <th>
+                        STO No.
+                      </th>
+                      <th class="text-center">
+                        Date
+                      </th>
+                      <th class="text-center">
+                        STO Title
+                      </th>
+                      <th class="text-center">
+                        Categeory
+                      </th>
+                      <th class="text-center">
+                        STO Items |QTY
+                      </th>
+                      <th class="text-center">
+                        STO Items Packing List
+                      </th>
+                      <th class="text-center">
+                        Dispatch Balance Items|QTY
+                      </th>
+                      <th class="text-center">
+                        Foreclose
+                      </th>
+                      <th class="text-center">
+                        Dispatch Details
+                      </th>
+                      <th class="text-center">
+                        Approvals
+                      </th>
+
+
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let items of items">
+                      <td>
+                          {{items.stoNo}}
+                      </td>
+                      <td class="text-center">
+                          {{items.date}}
+                      </td>
+                      <td class="text-center">
+                          {{items.stoTitle}}
+                      </td>
+
+                      <td class="text-center">
+                          {{items.categeory}}
+                      </td>
+                      <td class="text-center">
+                          {{items.stoItem}}
+                      </td>
+                      <td class="text-center">
+                        <mat-icon>print</mat-icon>
+                      </td>
+                      <td class="text-center">
+                          {{items.dispatchItem}}
+                      </td>
+                      <td class="text-center">
+                          {{items.foreClose}}
+                      </td>
+                      <td class="text-center">
+                          {{items.dispatchDetails}}
+                      </td>
+                      <td class="text-center">
+                         {{items.approvals}}
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </p-accordionTab>
+  </p-accordion>
+</div>

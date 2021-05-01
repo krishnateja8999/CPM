@@ -1,0 +1,302 @@
+
+<div class="NewHeader" style="background-color:#286ba5 !important;height:50px">
+  <h1 mat-dialog-title >
+    ADD RFQ
+  </h1>
+</div>
+<mat-horizontal-stepper #stepper>
+  <mat-step>
+    <div mat-dialog-content>
+      <form class="form-horizontal" novalidate [formGroup]="projectForm">
+        <ng-template matStepLabel>General</ng-template>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Quote Number : &nbsp;</label>
+          <div class="col-sm-6">
+            <span>R-823498</span>
+            <div *ngIf="!contactName.valid && (contactName.dirty || contactName.touched)" class="error-text">
+              <div *ngIf="contactName.errors.required">
+                Quote Number is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Project Type : &nbsp;</label>
+          <div class="col-sm-8">
+            <mat-select class="form-control" placeholder="Select Project Type">
+              <mat-option [value]= "0">Construction</mat-option>
+              <mat-option [value]= "1">Engineering</mat-option>
+              <mat-option [value]= "2">Internal</mat-option>
+              <mat-option [value]= "3">Legal</mat-option>
+            </mat-select>
+            <div *ngIf="!streetAddress.valid && (streetAddress.dirty || streetAddress.touched)" class="error-text">
+              <div *ngIf="streetAddress.errors.required">
+                Project Type is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Client Name : &nbsp;</label>
+          <div class="col-sm-8">
+            <input type="text" maxlength="200" class="form-control" placeholder="Enter Client name"
+            formControlName="streetAddress" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Contract Details:&nbsp;</label>
+          <div class="col-sm-8">
+            <mat-radio-group>
+              <mat-radio-button value="0">Existing </mat-radio-button>
+            <mat-radio-button value="1" style="margin-left: 10px;">New</mat-radio-button>
+            <mat-radio-button value="2" style="margin-left: 10px;">Same as Client</mat-radio-button>
+            </mat-radio-group>            
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Project Manager : &nbsp;</label>
+          <div class="col-sm-8">
+            <mat-select class="form-control" placeholder="Select Project Type">
+              <mat-option [value]= "0">Andrew Jones</mat-option>
+              <mat-option [value]= "1">Bob Cormier</mat-option>
+              <mat-option [value]= "2">James Smith</mat-option>
+              <mat-option [value]= "3">Kenneth McKee</mat-option>
+            </mat-select>
+            <div *ngIf="!jobTitle.valid && (jobTitle.dirty || jobTitle.touched)" class="error-text">
+              <div *ngIf="jobTitle.errors.required">
+                Project Manager is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Account Manager : &nbsp;</label>
+          <div class="col-sm-8">
+            
+            <div class="input-icon right">
+              <mat-select class="form-control" placeholder="Select Account Manager">
+                <mat-option [value]= "0">Bob Cormier</mat-option>
+                <mat-option [value]= "1">Cris Leduc</mat-option>
+                <mat-option [value]= "2">Mark Buma</mat-option>
+              </mat-select>
+            </div>
+            
+            <div *ngIf="!awardDate.valid && (awardDate.dirty || awardDate.touched)" class="error-text">
+              <div *ngIf="awardDate.errors.required">
+                Account Manager is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Quote Due Date : &nbsp;</label>
+          <div class="col-sm-8">
+            <input class="form-control" formControlName="dateOfStart"  placeholder="MM/DD/YYYY"
+              class="form-control" id="db" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+              <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+            <div *ngIf="!agreement.valid && (agreement.dirty || agreement.touched)" class="error-text">
+              <div *ngIf="agreement.errors.required">
+                Quote Due Date is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Quote Setup Due Date : &nbsp;</label>
+          <div class="col-sm-8">
+            
+            <div class="input-icon right">
+              <input class="form-control" formControlName="agreementDate"  placeholder="MM/DD/YYYY"
+              class="form-control" id="db" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+              <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+            </div>
+            
+            <div *ngIf="!agreementDate.valid && (agreementDate.dirty || agreementDate.touched)" class="error-text">
+              <div *ngIf="agreementDate.errors.required">
+                Quote Setup Due Date is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Received Date : &nbsp;</label>
+          <div class="col-sm-6">
+            <span>31-03-2020</span>
+            
+          </div>
+        </div>
+    </form>
+  </div>
+
+  <mat-dialog-actions class="col-sm-12" align="end">
+    <button mat-raised-button [disabled]="!projectForm.valid"  [ngClass]="!projectForm.valid ? '' : 'btn-primary'" ><mat-icon>arrow_forward</mat-icon>&nbsp;Proceed</button>
+    <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+  </mat-dialog-actions>
+</mat-step>
+
+<mat-step>
+  <div mat-dialog-content>
+    <form class="form-horizontal" novalidate [formGroup]="projectForm">
+      <ng-template matStepLabel>Project Address</ng-template>
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Street Address : &nbsp;</label>
+        <div class="col-sm-8">
+          <input type="text" maxlength="200" class="form-control" placeholder="Enter street Address"
+            formControlName="streetAddress" required>
+        
+        <div *ngIf="!Client.valid && (Client.dirty || Client.touched)" class="error-text">
+          <div *ngIf="Client.errors.required">
+            street Address is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">City : &nbsp;</label>
+      <div class="col-sm-8">
+        
+        <input type="text" maxlength="50" class="form-control" placeholder="Enter City"
+        formControlName="engincharge" required>
+        <div *ngIf="!address.valid && (address.dirty || address.touched)" class="error-text">
+          <div *ngIf="address.errors.required">
+            City is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Country : &nbsp;</label>
+      <div class="col-sm-8">
+        <input type="text" maxlength="50" class="form-control" placeholder="Enter Country"
+        formControlName="email" required>
+        <div *ngIf="!email.valid && (email.dirty || email.touched)" class="error-text">
+          <div *ngIf="email.errors.required">
+            Country is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Province : &nbsp;</label>
+      <div class="col-sm-8">
+        <input type="text" maxlength="50" class="form-control" placeholder="Enter Province"
+        formControlName="department" required>
+        <div *ngIf="!department.valid && (department.dirty || department.touched)" class="error-text">
+          <div *ngIf="department.errors.required">
+            Province is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Legal Description : &nbsp;</label>
+      <div class="col-sm-8">
+        <textarea class="form-control txtarea" placeholder="Enter Legal Description" rows="2"
+        formControlName="address" required></textarea>
+        <div *ngIf="!engincharge.valid && (engincharge.dirty || engincharge.touched)" class="error-text">
+          <div *ngIf="engincharge.errors.required">
+            Legal Description is required
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+</div>
+
+<mat-dialog-actions class="col-sm-12" align="end">
+  <button *ngIf="!project"mat-raised-button [disabled]="!projectForm.valid" 
+  [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+  <mat-icon>send</mat-icon>&nbsp;Save
+</button>
+<button *ngIf="project" mat-raised-button [disabled]="!projectForm.valid" 
+[ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+<mat-icon>update</mat-icon>&nbsp;Update
+</button>
+<button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>
+  &nbsp;Close
+</button>
+</mat-dialog-actions>
+</mat-step>
+
+<mat-step>
+  <div mat-dialog-content>
+    <form class="form-horizontal" novalidate [formGroup]="projectForm">
+      <ng-template matStepLabel>Purpose</ng-template>
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Purpose of Survey : &nbsp;</label>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select Purpose">
+            <mat-option [value]= "0">As-Built Survey</mat-option>
+            <mat-option [value]= "1">Building a Fence</mat-option>
+            <mat-option [value]= "2">Building a House</mat-option>
+            <mat-option [value]= "3">Building a Pool</mat-option>
+            <mat-option [value]= "4">Buying / selling Property</mat-option>
+            <mat-option [value]= "5">Legal Survey</mat-option>
+            <mat-option [value]= "6">Minor Variance</mat-option>
+            <mat-option [value]= "7">Pre-Engineering Design</mat-option>
+            <mat-option [value]= "8">Severance</mat-option>
+            <mat-option [value]= "9">Site Plan</mat-option>
+            <mat-option [value]= "10">Topographic Survey</mat-option>
+          </mat-select>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Where did you hear about us? : &nbsp;</label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" placeholder="Select Source">
+          <mat-option [value]= "0">Google</mat-option>
+          <mat-option [value]= "1">Linked In</mat-option>
+          <mat-option [value]= "2">other</mat-option>
+          <mat-option [value]= "3">Referral</mat-option>
+          <mat-option [value]= "4">Returning Client</mat-option>
+          <mat-option [value]= "5">Social Media</mat-option>
+          <mat-option [value]= "6">Web Site</mat-option>
+        </mat-select>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Attach File : &nbsp;</label>
+      <div class="col-sm-8">
+        <input type="file"  placeholder="Docs" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Details : &nbsp;</label>
+      <div class="col-sm-8">
+        <textarea class="form-control txtarea" placeholder="Enter Details" rows="2"
+        formControlName="address" required></textarea>
+        <div *ngIf="!engincharge.valid && (engincharge.dirty || engincharge.touched)" class="error-text">
+          <div *ngIf="engincharge.errors.required">
+            Details is required
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+</div>
+
+<mat-dialog-actions class="col-sm-12" align="end">
+  <button *ngIf="!project"mat-raised-button [disabled]="!projectForm.valid" 
+  [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+  <mat-icon>send</mat-icon>&nbsp;Save
+</button>
+<button *ngIf="project" mat-raised-button [disabled]="!projectForm.valid" 
+[ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+<mat-icon>update</mat-icon>&nbsp;Update
+</button>
+<button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>
+  &nbsp;Close
+</button>
+</mat-dialog-actions>
+</mat-step>
+
+</mat-horizontal-stepper>
+
+

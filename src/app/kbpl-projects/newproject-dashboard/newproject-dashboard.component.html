@@ -1,0 +1,44 @@
+<p class="col-sm-12" style="margin-top: 20px !important;">
+  <span style="font-size: 18px;font-weight: bold; margin-right: 8px">Project Info:</span>
+  <span style="font-size: 16px; margin-right: 8px">R-025012 </span>
+  <span class="pull-right" style="font-size: 16px; margin-right: 8px;margin-top: 2px;"> Active</span>
+  <span class="pull-right" style="font-size: 18px;font-weight: bold; margin-right: 8px">Project Status:</span>
+  
+  <!-- <span style="font-size: 16px; margin-right: 8px">(Toronto Towers) </span> -->
+</p>
+<div class="row super-row" style="padding: 5px 24px 10px 23px">
+      <a routerLinkActive="active-link" routerLink="project-activity"
+      class="col-sm font-color">Activity
+      <br /> </a>
+      <a routerLinkActive="active-link" routerLink="project-property"
+      class="col-sm font-color">Property
+      <br /></a> 
+      <a routerLinkActive="active-link" routerLink="project-budget"
+      class="col-sm font-color" >Budget
+      <br /> </a>      
+      <a routerLinkActive="active-link" routerLink="project-manage"
+      class="col-sm font-color">Manage
+      <br /></a>
+      <a routerLinkActive="active-link" routerLink="project-hours"
+      class="col-sm font-color">Hours
+      <br /></a>
+      <a routerLinkActive="active-link" routerLink="project-expenses"
+      class="col-sm font-color">Expenses
+      <br /></a>
+      <a routerLinkActive="active-link" routerLink="project-invoices"
+      class="col-sm font-color">Invoices
+      <br /></a>
+      <a routerLinkActive="active-link" routerLink="project-summary"
+      class="col-sm font-color">Summary
+      </a>
+                  
+      </div>
+      
+      <div class="w-100">
+          <div class="flex-p">
+              <div class="row wrap">
+                  <div class="col-sm-12 no-padding">
+                      <router-outlet></router-outlet>
+                  </div>
+              </div>
+          </div>

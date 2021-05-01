@@ -1,0 +1,71 @@
+
+    
+    <div class="row" style="margin-right: 5px; margin-left: 2px;margin-top: 15px;">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th style="width:101px">Created</th>
+                <th style="width:82px">Ref No.</th>
+                <th style="width:104px">Site Name</th>
+                <th style="width:99px">SOW</th>
+                <th style="width:147px">Street Address</th>
+                <th style="width:66px">Task Name</th>
+                <th style="width:93px">Actions</th>
+                <th style="width:81px">Job Code</th>
+                <th >Planned Hours</th> 
+                <th class="text-center" style="width:98px">Due Date</th>
+                <th class="text-center"style="width:92px">Scheduled Date</th>
+                <th >Assigned Hours</th>
+                <th style="width:86px">Assigned User</th>
+                <th class="text-center">Status </th>
+                <th class="text-center" style="width:98px">Manage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td style="min-width: 50px !important;">{{item.created}}</td>
+                 <td style="text-align: center!important;"><a matTooltip="Click to view Details"
+                  routerLink="/mrc/projects/quotes-dashboard/manage" target="_blank">
+                  {{item.refNo}}
+                  </a>
+                </td> 
+                <td style="text-align: left!important;">{{item.siteName }}</td>
+                <td>{{item.sow}}</td>
+                <td style="text-align: left!important;">{{item.streetAddress }}</td>
+                <td style="text-align: left!important;">{{item.taskName }}</td>
+                <td style="text-align: left!important;">{{item.actions }}</td>  
+                <td style="text-align: left!important;">{{item.jobCode }}</td>
+                <td style="text-align: left!important;">{{item.plannedHours }}</td>
+                <td style="text-align: center!important;"><a style="color:blue" (click)="openContractsDialog()">{{item.dueDate }}</a></td> 
+                <td style="text-align: center!important;">{{item.scheduleDate }}</td>
+                <td style="text-align: left!important;">{{item.assignedHours }}</td>
+                <td style="text-align: left!important;">{{item.assignedUser }}</td>
+                <td style="text-align: center!important;">{{item.status }}</td>
+                
+                <td class="text-center">{{item.manage }}
+                  <a style="cursor: pointer;margin-right:0px; " matTooltip="Update Contract Details"
+                    (click)="AddContract1(item)">
+                    <i class="fa fa-edit" style="color: cornflowerblue;font-size:18px"></i>
+                  </a>
+                  <a class="anchor" matTooltip="Add Notes"
+                    (click)="AddProjectNotes()" style=" margin-left:0px">
+                    <mat-icon style="cursor: pointer;color: #45c136f7;font-size: 20px;vertical-align: middle;">rate_review
+                    </mat-icon>
+                  </a>
+                  <a><i class="fa fa-trash red" matTooltip="Delete Contract"
+                      style="cursor: pointer;font-size:18px;margin-left:0px" ></i></a>
+    
+                </td>
+              </tr>
+    
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[9, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          <!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)"
+      showFirstLastButtons></mat-paginator> -->
+        </div>
+      </div>
+    </div>

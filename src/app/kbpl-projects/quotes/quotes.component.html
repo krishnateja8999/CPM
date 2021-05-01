@@ -1,0 +1,372 @@
+<div fxLayout="row" style="margin-top: 15px;">
+  <div class=" col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #007ad914;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #007ad9;">business_center</mat-icon>
+        <!-- <mat-icon style="font-size: 50px;margin-top: 10px;">monetization_on</mat-icon> -->
+          <mat-card-header style="margin-left:120px">
+
+            <mat-card-subtitle style="margin-top: -65px;">
+              <h2>$51,000</h2>
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+              <h3>Budget</h3>
+            </mat-card-subtitle>
+          </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #0cf80c29;">
+          <mat-icon style="font-size: 50px;margin-top: 10px; color: green;">checklist</mat-icon>
+          <mat-card-header style="margin-left:140px">
+
+            <mat-card-subtitle style="margin-top: -65px;">
+              <h2>$46,380</h2>
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+              <h4>Invoice Raised</h4>
+            </mat-card-subtitle>
+          </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #ffd74099;">
+          <mat-icon style="font-size: 50px;margin-top: 10px; color: #bc970a;">attach_money</mat-icon>
+          <mat-card-header style="margin-left:140px">
+
+            <mat-card-subtitle style="margin-top: -65px">
+              <h2>$41,100</h2>
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+              <h4>Invoice Recieved</h4>
+            </mat-card-subtitle>
+          </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #ffa5003b;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #ff6152;">money_off</mat-icon> 
+            <mat-card-header style="margin-left:140px">  
+                             
+              <mat-card-subtitle style="margin-top: -65px">
+                <h2>
+                  $5,280
+                </h2>                               
+              </mat-card-subtitle>
+              <mat-card-subtitle><h3>Pending</h3></mat-card-subtitle>
+            </mat-card-header>
+
+      </mat-card>
+    </div>
+  </div>          
+</div>
+
+<div class="row-wrap">
+  <div class="flex-p w-100"> 
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row" style="margin-bottom:7px;">
+                  <div class="col-xs-6 ">
+                      <div class="flex-p">
+                        <app-kbpl-projects></app-kbpl-projects>
+                      </div>
+                  </div>
+                  <div class="col-xs-6" style="padding-right: 18px !important;">
+                      <div class="flex-p">
+                        <!-- <button mat-raised-button class="pull-right add-hover-help btn-success-help" style="margin-left: 10px;background:#e9c741;color:black">
+                          <mat-icon>help_outline</mat-icon> Help
+                      </button> -->
+                  <button mat-raised-button class="pull-right btn-primary" style="margin-left: 10px;color:white; background:#3b7bb8" (click)="openGridColumnsDialog()">
+                          <mat-icon>view_column</mat-icon> Grid Columns
+                      </button>
+                  <button mat-raised-button class="pull-right add-hover btn-primary" (click)="openleadDialog()">
+                          <mat-icon>add</mat-icon> Add RFQ
+                      </button>
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle = !filterToggle">
+                          <mat-icon>filter_list</mat-icon> Filter
+                      </button>
+                      
+                  </div>
+                      
+                  </div>
+              </div>
+              
+<div fxLayout="row wrap" *ngIf="filterToggle" style="margin-bottom: 10px">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+      <mat-card class="filter">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Keyword:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Enter Keyword" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Project Manager:
+              </div>
+              <div class="col-sm-8">
+                <!-- <input type="text" placeholder="Search by Client" class="form-control" [formControl]="clientName"> -->
+                <mat-select class="form-control" placeholder="--Please Select--">
+                  <mat-option class='option' [value]="0">All</mat-option>
+                  <mat-option [value]="1">Andrew jones</mat-option>
+                  <mat-option [value]="2">James Smith</mat-option>
+                  <mat-option [value]="3">Kenneth McKee</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Account Manager:
+              </div>
+              <div class="col-sm-8">
+                <!-- <input type="text" placeholder="Search by Contract Name" class="form-control" [formControl]="jobTitle"> -->
+                <mat-select class="form-control" placeholder="--Please Select--">
+                  <mat-option class='option' [value]="0">All</mat-option>
+                  <mat-option [value]="1">Mark</mat-option>
+                  <mat-option [value]="2">Binton</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row" style="padding-top:10px !important">
+            <div class="col-sm-4" style="margin-top: 4px;">
+              <div class="col-sm-4 newMarginClass">
+                Client Name:
+              </div>
+              <!-- <div class="col-sm-8"> -->
+              <!-- <input class="form-control"  [formControl]="startendDate" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5" name="dt5">
+                            <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time> -->
+              <div class="col-sm-8">
+                 <input type="text" placeholder="Enter Client Name" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Project Type:
+              </div>
+              <div class="col-sm-8">
+                <!-- <input type="text" placeholder="Search by Client" class="form-control" [formControl]="clientName"> -->
+                <mat-select class="form-control" placeholder="--Please Select--">
+                  <mat-option class='option' [value]="0">All</mat-option>
+                  <mat-option [value]="1">Andrew jones</mat-option>
+                  <mat-option [value]="2">James Smith</mat-option>
+                  <mat-option [value]="3">Kenneth McKee</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4" >
+              <div class="col-sm-4 newMarginClass">
+                Quote Status:
+              </div>
+              <div class="col-sm-8">
+                <!-- <input type="text" placeholder="Search by Client" class="form-control" [formControl]="clientName"> -->
+                <mat-select class="form-control" placeholder="--Please Select--">
+                  <mat-option class='option' [value]="0">All</mat-option>
+                  <mat-option [value]="1">Andrew jones</mat-option>
+                  <mat-option [value]="2">James Smith</mat-option>
+                  <mat-option [value]="3">Kenneth McKee</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4" style="padding-top:10px !important">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                To Date:
+              </div>
+              <div class="col-sm-8">
+                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                  [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+              </div>
+            </div>
+  
+            <div class="col-sm-4" style="padding-top:10px !important">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                From Date:
+              </div>
+              <div class="col-sm-8">
+                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                  [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+              </div>
+            </div>
+            <div class="col-sm-4" style="padding-top:10px !important">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                Date Type:
+              </div>
+              <mat-radio-group aria-label="Select an option">
+                <!-- <mat-radio-button value="1" checked style="margin-left: 10px;">Agreement </mat-radio-button> -->
+                <mat-radio-button value="0" style="margin-left: 0px;" checked>PM&nbsp;&nbsp; </mat-radio-button>
+                <mat-radio-button value="1" style="margin-left: 0px;">AM&nbsp;&nbsp;</mat-radio-button>
+                <mat-radio-button value="2" style="margin-left: 0px;">Both&nbsp;&nbsp;</mat-radio-button>
+                <mat-radio-button value="3" style="margin-left: 0px;">ALL&nbsp;&nbsp;</mat-radio-button>
+              </mat-radio-group>
+              <!-- </div> -->
+            </div>
+          </div>
+          <div class="row" style="padding-top:10px !important">
+  
+            <div class="col-lg-1" style="margin-left:80% !important;">
+              <button mat-raised-button class="pull-right btn-primary">
+                <mat-icon>youtube_searched_for</mat-icon> Search
+              </button>
+  
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+              <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                <mat-icon>settings_backup_restore</mat-icon> Clear
+              </button>
+  
+            </div>
+            <a (click)="filterToggle = !filterToggle" class="pull-right"
+              style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+              <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </a>
+  
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+<div class="row" style="margin-top:20px">
+  <div class="col-xs-12" style="margin-left:10px">
+      <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head" >
+                  <tr>
+                    <th style="width: 77px;">Quote #</th>
+                      <th class="text-center">Potential</th>
+                      <th style="width: 89px;">Street Address</th>
+                      <th>Quote Status</th>
+                      <th>Days Old</th>
+                      <th >Project Type</th>
+                      <th>Client Name</th>
+                      <th >Project Manager</th>
+                      <th class="text-center" style="width: 89px;">Received Date</th>
+                      <th class="text-center" style="width: 89px;">Quoted Date</th>
+                      <th class="text-center" style="width: 89px;">Due Date</th>
+                      <th class="text-center" >Setup Due Date</th>
+                      <th class="text-center" >Activity Date</th>
+                      <th>Quoted</th>
+                      <th>Awarded</th>
+
+                      <th class="text-center" style="width: 112px!important;">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of values">
+                    
+                      <td><a style="color:blue" routerLink="/mrc/projects/quotes-dashboard/"  target="_blank" matTooltip="Click to View or Edit Code Details">{{item.projectcode}}</a></td>
+                      <!-- <td>{{item.projectname}}</td> -->
+                      <td><span class="change-icon" [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger">
+                        <i class="fa fa-circle dot {{item.colorCode}}" style="color:#53a508;margin-right: 44px;"></i>
+                        <i class="fa fa-chevron-circle-down dot dot-arrow {{item.colorCode}}" style="color:#53a508;margin-right: 25px;"></i>
+                    </span> <br>
+                    <mat-menu #menu="matMenu">
+                      <span mat-menu-item class="mat-color-menu"> <i class="fa fa-circle dot-menu Green"></i>
+                        &nbsp;&nbsp;Completed Follow Up with Client</span>
+                    <span mat-menu-item class="mat-color-menu"> <i class="fa fa-circle dot-menu Blue"></i>
+                        &nbsp;&nbsp;Covid</span>
+                    <span mat-menu-item class="mat-color-menu"><i class="fa fa-circle dot-menu" style="color:gray"></i>
+                        &nbsp;&nbsp;Follow Up with Client</span>
+                    <span mat-menu-item class="mat-color-menu"> <i class="fa fa-circle dot-menu Red"></i>
+                        &nbsp;&nbsp;Normal</span>
+                    <span mat-menu-item class="mat-color-menu"> <i class="fa fa-circle dot-menu" style="color:#a81bd3"></i>
+                        &nbsp;&nbsp;Rush</span>
+                    <span mat-menu-item class="mat-color-menu"> <i class="fa fa-circle dot-menu" style="color:#dbe730"></i>
+                        &nbsp;&nbsp;Unlikely</span>
+                    </mat-menu>
+                </td>
+                      <td><a  style="color:blue" (click)="openContractsDialog()"  target="_blank" matTooltip="Click to View Address on Google Map" href="https://www.google.com/maps/search/{{item.streetAddress +', '+ item.cityName}}" target="_blank">{{item.address}}</a></td>
+
+                      <td style="text-align: center!important;">
+                        <mat-select [style.background]="item.stageColour" style="min-width: 120px;" [(value)]="item.Status"
+                           placeholder="--Select Stage --" class='form-control'>
+                          <ng-container *ngFor='let option of statusOptions'>
+                            <mat-option [style.background]="option.colorCode" class='option' [value]="option.value"
+                            (click)="openQuotes(null)">
+                              {{option.name}}</mat-option>
+                          </ng-container>
+                        </mat-select>
+                      </td>
+
+                      <td class="text-center">{{item.contracts}}</td>
+                      <td>{{item.projecttype}}</td>
+                    
+                  <td ><a style="color:blue" routerLink="/mrc/projects/quotes-dashboard/invoices"  target="_blank" matTooltip="Click to View Invoice Details">{{item.contact}}</a>
+                      
+                  </td>
+                  <td>
+                      {{item.projectmanager}}
+                      
+                  </td>
+                  <td class="text-center">
+                      {{item.receivedDate}}
+                      
+                  </td>
+                  
+                  <td class="text-center">
+                      {{item.quotedDate}}
+                      
+                  </td>
+                  <td class="text-center">
+                    {{item.dueDate}}
+                    
+                </td>
+                <td class="text-center">
+                  {{item.setUpDueDate}}
+                  
+              </td>
+              <td class="text-center">
+                {{item.activityDate}}
+                
+            </td>
+                <td>
+                    {{item.quoted}}
+                    
+                </td>
+                <td>
+                  {{item.awarded}}
+                  
+              </td>
+                  
+
+      <td  class="text-center editDel">
+          <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Update Project" >
+              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+          </a>
+          <a class="anchor" matTooltip="Add Notes"
+                (click)="AddProjectNotes()" style=" margin-left:0px">
+                <mat-icon style="cursor: pointer;color: #45c136f7;font-size: 20px;vertical-align: middle;">rate_review
+                </mat-icon>
+              </a>
+              <a matTooltip="Add doc"><mat-icon style="cursor: pointer;color: #c466dbf7;font-size: 20px;vertical-align: middle;" (click)="opendocs()">note_add
+            </mat-icon></a>
+          <a ><i class="fa fa-trash red" matTooltip="Delete Project"  style="cursor: pointer;"></i></a>
+      </td>  
+  </tr>
+</tbody>
+</table>
+<mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>

@@ -1,0 +1,75 @@
+<div class="row-wrap">
+  <div class="flex-p w-100">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row" style="margin-bottom:7px;">
+                  <div class="col-xs-4 ">
+                      <div class="flex-p">
+                      </div>
+                  </div>
+                  <!-- Buttons -->
+                  <div class="col-xs-8 " style="margin-left:-10px;margin-top: -18px;">
+                      <div class="flex-p">
+                          <button mat-raised-button class="pull-right  btn-primary" (click)="openUploadExcell()">
+                             Upload Excel
+                          </button>
+                      
+                  </div>
+                      
+                  </div>
+              </div>
+              
+
+<!-- Table -->
+<div class="row" style="margin-top:20px;">
+  <div class="col-xs-12" style="margin-left:8px">
+      <div id="grid-table-container" class="table-responsive" style="width: 99%;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th class="text-center">Part No.</th>
+                      <th class="text-center">Part Name</th>
+                      <th class="text-center">Part Make</th>
+                      <th class="text-center">Avail. Qty</th>
+                      <th class="text-center">Receivals</th>
+                      <th class="text-center">Receivals Date</th>
+                      <th class="text-center">Issues</th>
+                      <th class="text-center">Issue Date</th>
+                      <th class="text-center">History</th>
+                      <th class="text-center">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      
+                  <!-- <td class="text-center">{{item.stockingDate}}</td>
+                  <td class="text-center">{{item.totalItems}}</td>
+                  <td class="text-center">{{item.importedItems}} </td>
+                  <td class="text-center">{{item.exceptions}}</td>
+                  <td class="text-left ">{{item.remarks}}</td>
+                  <td class="text-center">{{item.importedBy}}</td>
+                  <td class="text-center">{{item.uploadedDate}} </td> -->
+                  
+  </tr>
+  <tr>
+    <td colspan="18" class="text-center">
+        No Data Available
+    </td>
+</tr>
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+

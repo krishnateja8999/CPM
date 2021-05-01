@@ -1,0 +1,39 @@
+
+
+<div class="table-responsive w-100 flex-p">
+  <table id="example2" class="table table-bordered table-hover">
+      <thead class="tbl-head">
+          <tr class="tr-grid-header">
+              <th class="vert-align-mid" style="width: 193px !important;">Indent No.</th>
+              <th class="vert-align-mid" style="width:90px">Indent Date</th>
+              <th class="vert-align-mid" style="width:217px">Indent Title</th>
+              <th class="vert-align-mid" style="width:190px">Indent Category</th>
+              <th class="vert-align-mid" style="width:118px">Make / Model & Door No.</th>
+              <th class="vert-align-mid" style="width:103px;text-align: center!important;">View / Approve Items</th>
+              <th style="text-align: center!important;">Approval</th>
+              <th style="text-align: center!important;">Required By</th>
+              <th >Amount</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of items">
+              <td>{{item.indNo}}</td>
+              <td>{{item.indDate}}</td>
+              <td>{{item.indTitle}}</td>
+              <td>{{item.indCategory}}</td>
+              <td>{{item.make}}</td>
+              
+              <td  style="text-align: center!important;">{{item.viewItems}}</td>
+              
+              <td  style="text-align: center!important;">{{item.approvals}}</td>
+              <td  style="text-align: center!important;">{{item.reqBy}}</td>
+              <td>{{item.amount}}</td>
+              
+          </tr>
+          
+          
+      </tbody>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+</div>

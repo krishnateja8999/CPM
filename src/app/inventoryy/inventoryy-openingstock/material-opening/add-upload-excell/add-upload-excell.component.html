@@ -1,0 +1,40 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Approve Stock
+  </h1>
+</div>
+<div mat-dialog-content>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Stocking Date : </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1"  style="margin-left: 0px;">
+            <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Upload Document : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input #myInput type="file" id="file" multiple="multiple"
+                               />
+      </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4 add-member-label">Remarks : </label>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <textarea maxlength="999" formControlName="remarks" placeholder="Enter Remarks" class="form-control customtext" rows="2" ></textarea>
+    </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Enter OTP : </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <input class="form-control" class="form-control" placeholder="Enter OTP">
+  </div>
+</div>
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button class="btn-primary"  [mat-dialog-close]="'test'"><mat-icon>send</mat-icon> <span
+             >Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>Close</button>
+</mat-dialog-actions>
